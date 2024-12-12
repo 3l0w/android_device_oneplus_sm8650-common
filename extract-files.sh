@@ -64,17 +64,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service_uff)
-            [ "$2" = "" ] && return 0
-            sed -i "s/\/default/\/oplus\x00\x00/" "${2}"
-            ;;
         odm/bin/hw/android.hardware.secure_element-service.qti|vendor/lib64/qcrilNr_aidl_SecureElementService.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "android.hardware.secure_element-V1-ndk.so" "android.hardware.secure_element-V1-ndk_odm.so" "${2}"
-            ;;
-        odm/etc/vintf/manifest/manifest_oplus_fingerprint_aidl_v3.xml)
-            [ "$2" = "" ] && return 0
-            sed -i "s/IFingerprint\/default/IFingerprint\/oplus/" "${2}"
             ;;
         odm/etc/camera/CameraHWConfiguration.config)
             [ "$2" = "" ] && return 0
