@@ -45,6 +45,7 @@ function lib_to_package_fixup_vendor_variants() {
             libdualcam_optical_zoom_control | \
             libdualcam_video_optical_zoom | \
             libhwconfigurationutil | \
+            libosensenativeproxy_client | \
             libtriplecam_optical_zoom_control | \
             libtriplecam_video_optical_zoom | \
             vendor.oplus.hardware.camera_rfi-V1-ndk | \
